@@ -1,0 +1,9 @@
+[
+    { "name": "Chair", "price": 100, "color": "brown" ,"img":"../Pictures/ARUB0042.jpg"},
+    { "name": "Table", "price": 50, "color": "black","img":"../Pictures/ARUB0042.JPG" },
+    { "name": "Shoes", "price": 555, "color": "white" ,"img":"../Pictures/ARUB0042.JPG"},
+    { "name": "computer", "price": 454, "color": "gray" ,"img":"..c/Pictures/ARUB0042.JPG"},
+    { "name": "apple", "price": 50, "color": "green","img":"../Pictures/ARUB0042.JPG" },
+    { "name": "bag", "price": 170, "color": "pink" ,"img":"../Pictures/ARUB0042.JPG"},
+    { "name": "book", "price": 10, "color": "orange","img":"../Pictures/ARUB0042.JPG" }
+]

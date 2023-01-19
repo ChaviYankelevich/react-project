@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+import react, { useRef, useState } from 'react';
 import './App.css';
+import Form from './Components/Form';
+import Login from './Components/Login';
+// import List from './Components/List';
+// import { BrowserRouter } from 'react-router-dom'
+import Page from './Components/Page';
+import Routing from './Components/Routing';
+import UserContext from './Components/UserContext';
+
 
 function App() {
+  // const [isLogIn,setIsLogIn]=useState(false);
+  // const [userName,setUserName]=useState('');
+  
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+     <div>
+      
+       {/* <BrowserRouter> */}
+     
+      {/* { isLogIn?/* <BrowserRouter> */}
+    {/* //  <UserContext>
+    //    <Login/>
+    //  <Page/>
+      
+    //   </UserContext> */}
+  {/* </BrowserRouter> */}
+     {/* <Login></Login> */ }
+  {/* <Routing userName={userName}/> */}
+   {/* :
+  
+    // <Login setIsLogIn={setIsLogIn} setUserName={setUserName}/>}
+    //  </BrowserRouter> */}
+   <Form></Form>
+     </div>
   );
 }
 
