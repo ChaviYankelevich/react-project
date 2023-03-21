@@ -1,0 +1,20 @@
+[
+    {
+        "Date":"16/03/2021",
+        "Contributor":"moshe",
+        "Type":"visa",
+        "Sum":100
+    },
+    {
+        "Date":"15/03/2021",
+        "Contributor":"yaakov",
+        "Type":"check",
+        "Sum":200
+    },
+    {
+        "Date":"16/05/2022",
+        "Contributor":"jon",
+        "Type":"visa",
+        "Sum":50
+    }
+]

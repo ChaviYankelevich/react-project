@@ -1,0 +1,73 @@
+{
+    "happy": [
+        {
+            "word": "sappy",
+            "freq": 15,
+            "score": 300,
+            "flags": "b",
+            "syllables": "2"
+        },
+        {
+            "word": "snappy",
+            "freq": 16,
+            "score": 300,
+            "flags": "bc",
+            "syllables": "2"
+        },
+        {
+            "word": "nappy",
+            "freq": 15,
+            "score": 300,
+            "flags": "b",
+            "syllables": "2"
+        }
+    ],
+    "print": [
+        {
+            "word": "lint",
+            "freq": 18,
+            "score": 300,
+            "flags": "bc",
+            "syllables": "1"
+        },
+        {
+            "word": "hint",
+            "freq": 21,
+            "score": 300,
+            "flags": "bc",
+            "syllables": "1"
+        },
+        {
+            "word": "flint",
+            "freq": 20,
+            "score": 300,
+            "flags": "bc",
+            "syllables": "1"
+        }
+    ],
+    "dev": [
+        {
+            "word": "rev",
+            "freq": 20,
+            "score": 300,
+            "flags": "bc",
+            "syllables": "1"
+        },
+        {
+            "word": "death",
+            "freq": 26,
+            "score": 264,
+            "flags": "bc",
+            "syllables": "1"
+        },
+        {
+            "word": "deaf",
+            "freq": 21,
+            "score": 264,
+            "flags": "bc",
+            "syllables": "1"
+        }
+    ]
+}
+
+

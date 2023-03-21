@@ -1,9 +1,14 @@
 [
-    { "name": "Chair", "price": 100, "color": "brown" ,"img":"../Pictures/ARUB0042.jpg"},
-    { "name": "Table", "price": 50, "color": "black","img":"../Pictures/ARUB0042.JPG" },
-    { "name": "Shoes", "price": 555, "color": "white" ,"img":"../Pictures/ARUB0042.JPG"},
-    { "name": "computer", "price": 454, "color": "gray" ,"img":"..c/Pictures/ARUB0042.JPG"},
-    { "name": "apple", "price": 50, "color": "green","img":"../Pictures/ARUB0042.JPG" },
-    { "name": "bag", "price": 170, "color": "pink" ,"img":"../Pictures/ARUB0042.JPG"},
-    { "name": "book", "price": 10, "color": "orange","img":"../Pictures/ARUB0042.JPG" }
+    { "name": "מכונית" ,"img":"../Pictures/2.png","data":"מכונית בשווי 1000000 שקלים כולל דלק לשנה"},
+    { "name": "סלון מפנק", "img":"../Pictures/3.png","data":"שיפוץ לסלון שיתן לבית מראה אחר"},
+    { "name": "שופינג בארצות הברית","img":"../Pictures/13.png","data":"טיסה זוגית לארצות הברית בתוספת של 1000$ לשופינג"},
+    { "name": "נופש זוגי מפנק", "img":"../Pictures/15.png","data": "נופש זוגי באצולת אירופה"},
+    { "name": "זיכוי באושר עד", "img":"../Pictures/5.png" ,"data":"זיכוי של 2000 שקלים באושר עד"},
+    { "name": "קניות און ליין", "img":"../Pictures/34.png","data":"קניות און ליין בסך של 10000$" },
+    { "name": "גאגטים לילדים","img":"../Pictures/722.png","data":"גאגטים שהילדים חולמים עליהם" },
+    { "name": "דלק לשנה", "img":"../Pictures/דלק-לשנה.png" ,"data":"דלק בחינם למשך שנה שלמה"},
+    { "name": "זיכוי בטרקלין שמש", "img":"../Pictures/טרקלין-שמש.png","data":"זיכוי של 5000 שקלים בטרקלין שמש" },
+    { "name": "מעמיסים עגלות", "img":"../Pictures/מעמיסים-עגלות.png","data":"כל מה שתצליח להעמיס יהיה שלך" },
+    { "name": "מצלמת קנון", "img":"../Pictures/56.png","data":"מצלמת קנון איכותית בשווי 1000 שקלים" }
+
 ]

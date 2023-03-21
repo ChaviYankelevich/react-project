@@ -1,64 +1,97 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState,useContext } from 'react';
 import axios from 'axios';
-// import style from './style'
-import Products from './Products';
-export default function List1() {
-const nameRef=useRef();
-const colorRef=useRef();
-const priceRef=useRef();
-     const [products, setProducts] = useState([]);
-         //[
-//         { name: 'Chair', price: 100, color: 'brown' ,img: <img src="../ARUB0042.jpg"/> },
-//         { name: 'Table', price: 50, color: 'black',img: <img src="../Pictures/ARUB0042.jpg"/> },
-//         { name: 'Shoes', price: 555, color: 'white' ,img: <img src="../Pictures/ARUB0042.jpg"/>},
-//         { name: 'computer', price: 454, color: 'gray' ,img: <img src="../Pictures/ARUB0042.jpg"/>},
-//         { name: 'apple', price: 50, color: 'green',img: <img src="../Pictures/ARUB0042.jpg"/>} ,
-//         { name: 'bag', price: 170, color: 'pink' ,img: <img src="../Pictures/ARUB0042.jpg"/>},
-//         { name: 'book', price: 10, color: 'orange',img: <img src="../Pictures/ARUB0042.jpg"/> }
-//     ]);
-   let arr=[...products];
-// useEffect(
-//     ()=>{
-//         //<div class="alert alert-success d-flex align-items-center" role="alert"></div>
-//        alert("HELLO")
-//     }, []);
-    useEffect(() => {
-        axios.get('./data.json')
-        .then(data=>
-            {
-                console.log(data);
-                setProducts(data.data);
-            }).catch(error=>{console.log(error)})
-    })
-const clicks=()=>{
- 
- arr.push({name:nameRef.current.value,price:priceRef.current.value,color:colorRef.current.value,img: <img src="./Pictures/ARUB0042.jpg"/>})
-setProducts(arr);
+import SingleProduct from './singleProduct';
+import './styleSheets/style.css';
+import {Link, Route, Routes} from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { Button, Form } from "react-bootstrap";
+import { useSelector,useDispatch  } from 'react-redux';
+import { setProduct } from './actions';
 
+
+export default function List() {
+const dispatch=useDispatch()
+const products=useSelector(state=>state.products)
+const director="chavi";
+const user=useSelector(state=>state.loginUser)
+    //  const [products, setProducts] = useState([]);
+     const [addProduct,setAddProduct]=useState(false)
+   let arr=[...products];
+   const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+    
+const clicks=()=>{
+ setAddProduct(true)
+ 
+}
+const onSubmit=async (dataForm)=>{
+    const newValue = {
+        name: dataForm.name,
+        img: dataForm.img,
+        data:dataForm.data
+      };
+    // console.log(dataForm)
+    // products.push(newValue)
+   dispatch(setProduct(newValue))
+    // console.log(products)
+    setAddProduct(false)
 }
     return (
-        <div>
-<table>
+      <div>
+        <div className='container'>   
         {
-            products.map((x, index) => 
-                       
-          <tr key={index}>
-            <td>{x.name}</td>
-         <td>{x.price}</td>
-            <td>{x.color}</td>
-            <td>{x.img}</td>
-         </tr>
+            
+            arr.map((x, index) => 
+          
+                <div key={index} className="divi">
+                
+                    <Link className='LINK' to={`/single/${index}`}>
+                      
+                    <img src={x.img} className="image"/> 
+                    <p className='name'>{x.name}</p>
+</Link>
+                </div>      
+
             )
         }
-        <tr>
-            <td><input ref={nameRef}/></td>
-            <td><input type="number" ref={priceRef}/></td>
-            <td><input type="color" ref={colorRef} /></td>
-            
-        </tr>
-        </table>
+        </div>
+        <br/>
+        <br/>
+    {user.userName==director&& <button onClick={clicks} className="btn btn-warning">הוסף מוצר</button>}
+        
+      {addProduct==true&& <form onSubmit={handleSubmit(onSubmit)}>
+          <Form.Label>שם מוצר</Form.Label>
+                      <Form.Control className='form'
+                     
+                    //   placeholder="Enter your name"
+                      {...register("name", {
+                        required: "הכנס שם",
+                      })}
+                    />                 
+                      <Form.Label>תמונה</Form.Label>
+                      <Form.Control className='form'
+                     
+                    //   placeholder="Enter your name"
+                      {...register("img", {
+                        required: "הכנס תמונה",
+                      })}
+                    />
+                     <Form.Label>מידע</Form.Label>
+                      <Form.Control className='form'
+                     
+                    //   placeholder="Enter your name"
+                      {...register("data", {
+                        required:"הכנס מידע",
+                      })}
+                    />
+                     <input type="submit" />
+            </form>}
+       
+      </div>
 
-       <button onClick={clicks} className="btn btn-warning"></button>
- </div>
+
     )
 }

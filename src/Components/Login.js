@@ -1,37 +1,54 @@
-import react, { useContext, useRef, useState } from 'react';
-import Page from './Page';
-import userContext from './UserContext';
+import React, { useContext, useState,useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { Button, Form } from "react-bootstrap";
+import { useSelector, useDispatch }from "react-redux"
+import {  setState } from './actions';
+
 export default function Login()
 {
-  const userCts=useContext(userContext);
-  const setIsLogIn= userCts.setIsLogIn
-  const setUserName=  userCts.setUserName;
-const nameref=useRef();
-   
-const passwordref=useRef();
+const dispatch = useDispatch()
+const user=useSelector(state=>state.loginUser)
+console.log(user,"user")
+const {
+  register,
+  handleSubmit,
+  formState: { errors },
+} = useForm();
+const onSubmit = (data) => {
+  dispatch(setState({isLogin:true,userName:data.name,password:data.password}))
+console.log(user,"after")
+};
 
-
-    function getstart()
-    {
-         nameref.current.value&&
-    passwordref.current.value
-    &&setIsLogIn(true)&&setUserName(nameref.current.value)
-
-    }
-   
+// useEffect(() => {
+//   console.log(user,"user");
+// },[user] );
 return(
-<div>
-{
-// !isLogIn?
-<>
-<input type="text" placeholder="name" ref={nameref}></input>
-<input type="password" placeholder="password" ref={passwordref}></input>
-<input type="button" value="OK" onClick={getstart}/>
-</>
+<div className='parent'>
+{user&& user.isLogin==false&& (
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Form.Label>Name</Form.Label>
+                      <Form.Control className='form'
+                     
+                      placeholder="Enter your name"
+                      {...register("name", {
+                        required: "Please enter your name",
+                      })}
+                    />
+                     <Form.Label>Password</Form.Label>
+                    <Form.Control className='form'
+                      type="password"
+                      placeholder="Enter your password"
+                      {...register("password", {
+                        required: "Please enter your password",
 
-// :
-// <Page name={nameref.current.value} password={passwordref.current.value}></Page>
-}
+                      })}
+                    />
+                    
+                     <input type="submit" />
+            </form>
+       
+      )}
  </div>
 )
+
 }
